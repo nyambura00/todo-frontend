@@ -74,6 +74,18 @@ function App() {
           </Route>
         </Routes>
       </div>
+
+      <footer className="text-center text-lg-start bg-light text-muted mt-4">
+        <div className="text-center p-4">
+          © Copyright - <a
+          target="_blank"
+          className="text-reset fw-bold text-decoration-none"
+          href="https://twitter.com/nyambura_weeny"
+          >
+          Winnie Nyambura
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
