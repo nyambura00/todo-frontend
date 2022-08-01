@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import AddTodo from './components/add-todo';
@@ -49,6 +49,31 @@ function App() {
           </Nav>
         </div>
       </Navbar>
+
+      <div className="container mt-4">
+        <Routes>
+          <Route exact path={["/", "/todos"]} render={(props) =>
+            <TodosList {...props} token={token} />
+          }>
+          </Route>
+          <Route path="/todos/create" render={(props)=>
+            <AddTodo {...props} token={token} />
+          }>
+          </Route>
+          <Route path="/todos/:id/" render={(props)=>
+            <AddTodo {...props} token={token} />
+          }>
+          </Route>
+          <Route path="/login" render={(props)=>
+            <Login {...props} login={login} />
+          }>
+          </Route>
+          <Route path="/signup" render={(props)=>
+            <Signup {...props} signup={signup} />
+          }>
+          </Route>
+        </Routes>
+      </div>
     </div>
   );
 }
